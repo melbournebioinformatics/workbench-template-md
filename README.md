@@ -25,8 +25,9 @@ complete the initial configuration of a new lesson repository built from this te
    navigate to _Settings_,
    select _Pages_ from the left sidebar,
    and make sure that `gh-pages` is selected as the branch to build from.
-   If no `gh-pages` branch is available, check _Actions_ to see if the first
+   If no `gh-pages` branch is available, check the _Actions_ tab to see if the first
    website build workflows are still running.
+   If they're not running yet, you may need to manually enable them via the _Actions_ tab.
    The branch should become available when those have completed.
 1. **Adjust the `config.yaml` file:**
    this file contains global parameters for your lesson site.
@@ -55,7 +56,7 @@ complete the initial configuration of a new lesson repository built from this te
       this file contains information that people can use to cite your lesson,
       for example if they publish their own work based on it.
       You should [update the CFF][cff-sandpaper-docs] now to include information about your lesson,
-      and remember to return to it periodicallt, keeping it updated as your
+      and remember to return to it periodically, keeping it updated as your
       author list grows and other details become available or need to change.
       The [Citation File Format home page][cff-home] gives more information about the format,
       and the [`cffinit` webtool][cffinit] can be used to create new and update existing CFF files.

@@ -304,76 +304,85 @@ any links that you are not going to use.
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
       </section><section id="setup"><p>FIXME: Setup instructions live in this document. Please specify the
-tools and the data sets the Learner needs to have installed.</p>
-<section><h2 class="section-heading" id="data-sets">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a></h2>
-<hr class="half-width"><!--
+tools and the data sets the Learner needs to have installed. <!--
+## Data Sets
+
 FIXME: place any data you want learners to use in `episodes/data` and then use
        a relative link ( [data zip file](data/lesson-data.zip) ) to provide a
        link to it, replacing the example.com link.
---><p>Download the <a href="https://example.com/FIXME" class="external-link">data zip file</a>
-and unzip it to your Desktop</p>
-</section><section><h2 class="section-heading" id="software-setup">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a></h2>
-<hr class="half-width"><div id="details" class="callout discussion">
+Download the [data zip file](https://example.com/FIXME) and unzip it to your Desktop
+--> ## Software Setup</p>
+<p>We use VS Code for general coding. Make sure to install VS Code for
+your operating system following the instructions below:</p>
+<ul><li><a href="https://code.visualstudio.com/docs/setup/windows" class="external-link">Windows</a></li>
+<li><a href="https://code.visualstudio.com/docs/setup/mac" class="external-link">macOS</a></li>
+<li><a href="https://code.visualstudio.com/docs/setup/linux" class="external-link">Linux</a></li>
+</ul><div id="windows-users" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <span class="callout-header">Discussion</span>
-<div id="details" class="callout-inner">
-<h3 class="callout-title">Details</h3>
+<div id="windows-users" class="callout-inner">
+<h3 class="callout-title">Windows users</h3>
 <div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>spoiler</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
+<p>If you are a Windows user, you may also need WSL, the Windows
+Subsystem for Linux. WSL will allow you to use the Terminal from within
+VS Code and to execute UNIX style commands.</p>
+<p>Follow the <a href="https://learn.microsoft.com/en-us/windows/wsl/install" class="external-link">official
+instructions here.</a></p>
+<p>After installing WSL, you will also need to install <a href="https://gitforwindows.org/" class="external-link">GitBash</a>.</p>
+<p>After installing GitBash, change the default Terminal executable on
+VS Code:</p>
+<ol style="list-style-type: decimal"><li>Open VS Code.</li>
+<li>From the <code>View</code> menu select
+<code>Command Palette --&gt; Terminal: Select Default Profile</code>.</li>
+<li>Select <code>GitBash</code> as the default profile.</li>
+</ol><p>✅ You’re all set to use VS Code with GitBash on Windows.</p>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  Windows
-  </h3>
-</button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
-<div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
-  <h3 class="accordion-header" id="headingSpoiler2">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  MacOS
-  </h3>
-</button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
-<div class="accordion-body">
-<p>Use Terminal.app</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
-  <h3 class="accordion-header" id="headingSpoiler3">
-  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>
-  Linux
-  </h3>
-</button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
-<div class="accordion-body">
-<p>Use Terminal</p>
-</div>
-</div>
-</div>
-</div>
+<section><h2 class="section-heading" id="environment-management-with-conda">Environment management with conda<a class="anchor" aria-label="anchor" href="#environment-management-with-conda"></a></h2>
+<hr class="half-width"><p>For certain workshops, you may need to install <a href="https://docs.conda.io/en/latest/" class="external-link">conda</a>, an open-source
+software and package management system. This is usually necessary when
+working with Python code.</p>
+<p>Our preferred flavour of conda is <a href="https://github.com/conda-forge/miniforge" class="external-link">miniforge</a>, but you
+could also use <a href="https://www.anaconda.com/docs/getting-started/miniconda/main" class="external-link">miniconda</a>.</p>
+<p><a href="https://conda-forge.org/download/" class="external-link">Click here and follow the
+miniforge installation instructions for your OS.</a></p>
+<!--
+READ HERE FOR OS-SPECIFIC INSTRUCTIONS
+
+Setup for different systems can be presented in dropdown menus via a `spoiler`
+tag. They will join to this discussion block, so you can give a general overview
+of the software used in this lesson here and fill out the individual operating
+systems (and potentially add more, e.g. online setup) in the solutions blocks.
+-->
+<!--
+:::::::::::::::: spoiler
+
+### Windows
+
+Use PuTTY
+
+::::::::::::::::::::::::
+
+:::::::::::::::: spoiler
+
+### MacOS
+
+Use Terminal.app
+
+::::::::::::::::::::::::
+
+
+:::::::::::::::: spoiler
+
+### Linux
+
+Use Terminal
+
+::::::::::::::::::::::::
+-->
 <!--
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.

@@ -2,9 +2,12 @@
 title: Setup
 ---
 
+Please follow the steps below and install the required software **before** the scheduled workshop.
+
+<!--
 FIXME: Setup instructions live in this document. Please specify the tools and
 the data sets the Learner needs to have installed.
-<!--
+
 ## Data Sets
 
 FIXME: place any data you want learners to use in `episodes/data` and then use

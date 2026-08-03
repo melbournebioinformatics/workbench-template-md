@@ -1,3 +1,42 @@
+## Building this lesson locally
+
+Requires R and pandoc. One-time setup on your machine:
+
+```r
+install.packages("pak")
+
+options(repos = c(
+  carpentries = "https://carpentries.r-universe.dev",
+  CRAN        = "https://cloud.r-project.org"
+))
+
+pak::pak(c("sandpaper", "pegboard", "tinkr"))
+pak::pak("melbournebioinformatics/uom-varnish")   # installs under the package name `varnish`
+
+sandpaper::use_package_cache(prompt = FALSE)
+```
+
+We use `pak` rather than `devtools`, which has been split up and superseded. Then, from inside
+the lesson repository:
+
+```r
+sandpaper::serve()          # live-reload preview on http://127.0.0.1:4321
+sandpaper::build_lesson()   # one-off build into site/
+sandpaper::check_lesson()   # structure and link validation
+```
+
+This is a Markdown lesson: no episode executes code, so there are no lesson dependencies to
+manage and `renv/` is gitignored.
+
+> ⚠️ **Never run `renv::init()` or `renv::activate()` in a lesson repository.** Both write a root
+> `.Rprofile` that hijacks every R session in the repo into an empty project library, at which
+> point `sandpaper` appears to vanish. If that has already happened, delete `.Rprofile` and
+> restart R.
+
+For the full explanation and troubleshooting, see
+[Renv and dependencies](https://github.com/melbournebioinformatics/melbournebioinformatics.github.io/wiki/Renv-and-dependencies)
+in the MB tutorials wiki.
+
 ## Contributing
 
 [The Carpentries][cp-site] ([Data Carpentry][dc-site], [HPC Carpentry][hpcc-site], [Library Carpentry][lc-site], and [Software Carpentry][swc-site]) are open source projects, and we welcome contributions of all kinds: 

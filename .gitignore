@@ -49,5 +49,12 @@ docs/
 # translation temp files
 po/*~
 
-# Custom
+# renv detritus
+renv/sandbox/
+
+# Markdown-only lesson: no episode executes code, so sandpaper never builds a
+# lesson-requirements renv profile and anything under renv/ here is local scratch.
+# If you convert this lesson to R Markdown, DELETE the line below: renv/profile,
+# renv/activate.R and renv/profiles/lesson-requirements/ must be committed, or CI
+# treats the lesson as unpinned and installs whatever is current on build day.
 renv/
